@@ -1,3 +1,11 @@
+<?php include 'includes/book.php'; ?>
+<?php 
+// Reduce the quantity of The Hunger Games to 0
+while ($hungerGames->quantity > 0) {
+    $hungerGames->buy();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -27,29 +35,29 @@
 
 	  				<div class="column">
 	  					<img src="images/hunger-games.jpeg" style="width:60%">
-	  					<h5>TITLE</h5>
-	  					<h5>by AUTHOR</h5>
-	  					<!-- SHOW STAR RATINGS -->
-	  					<h5><span class="emphasized">CHECK STOCK</span>
-						<h5>$PRICE</h5>
+	  					<h5><?php echo $hungerGames->title; ?></h5>
+	  					<h5>by <?php echo $hungerGames->author; ?></h5>
+						<?php echo $hungerGames->showRatingStars(); ?>
+	  					<h5><span class="emphasized"><?php echo $hungerGames->checkInStock(); ?></span></h5>
+                        <h5>$<?php echo $hungerGames->price; ?></h5>
 	  				</div>
 
 	  				<div class="column">
 	  					<img src="images/catching-fire.jpeg" style="width:60%">
-	  					<h5>TITLE</h5>
-	  					<h5>by AUTHOR</h5>
-	  					<!-- SHOW STAR RATINGS -->
-	  					<h5><span class="emphasized">CHECK STOCK</span>
-						<h5>$PRICE</h5>
+	  					<h5><?php echo $catchingFire->title; ?></h5>
+	  					<h5>by <?php echo $catchingFire->author; ?></h5>
+					    <?php echo $catchingFire->showRatingStars(); ?>
+	  					<h5><span class="emphasized"><?php echo $catchingFire->checkInStock(); ?></span></h5>
+						<h5>$<?php echo $catchingFire->price; ?></h5>
 	  				</div>
 
 	  				<div class="column">
 	  					<img src="images/mockingjay.jpeg" style="width:60%">
-	  					<h5>TITLE</h5>
-	  					<h5>by AUTHOR</h5>
-	  					<!-- SHOW STAR RATINGS -->
-	  					<h5><span class="emphasized">CHECK STOCK</span>
-						<h5>$PRICE</h5>
+	  					<h5><?php echo $mockingjay->title; ?></h5>
+	  					<h5>by <?php echo $mockingjay->author; ?></h5>
+						<?php echo $mockingjay->showRatingStars(); ?>
+	  					<h5><span class="emphasized"><?php echo $mockingjay->checkInStock(); ?></span></h5>
+						<h5>$<?php echo $mockingjay->price; ?></h5>
 	  				</div>
 				</div>
 			</div>
